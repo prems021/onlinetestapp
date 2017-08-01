@@ -1,0 +1,24 @@
+
+ <nav>
+      <a routerLink="/login" routerLinkActive="active">Logout</a>
+      <a routerLink="/heroes" routerLinkActive="active">Hero</a>
+      <a routerLink="/vazhipad" routerLinkActive="active">Vazhipad</a>
+      <a routerLink="/add_stock_item" routerLinkActive="active">store</a>
+      <a routerLink="/mange_main" routerLinkActive="active"> Mange</a>
+  
+</nav>
+
+<h2>My Heroes</h2>
+
+
+
+<div id="print-section">
+<h2>  Kshethra print test </h2>
+  
+  
+  
+</div>
+<button (click)="print()">print</button>
+<a class="md-btn md-btn-success"
+   [class.disabled]="isClickedOnce"
+   (click)="isClickedOnce = true">Start</a>

@@ -1,0 +1,98 @@
+
+
+<div class="container-fluid">
+
+                             <h1>ശ്രീ മുരുക </h1>
+  
+  
+        <form [formGroup]="myForm" novalidate (ngSubmit)="save()" #vazhipadForm="ngForm">
+          
+          
+             <div class="row"> 
+                                 
+                     <div class="col-md-2">
+                                          <div class="form-group" > 
+    
+                                                     <label for="">Devotee Name</label>  <input type="text" class="form-control" class="poojaname-control" formControlName="devotee_name">
+                                                     <small [hidden]="myForm.controls.devotee_name.valid || (myForm.controls.devotee_name.pristine && !submitted)" class="text-danger">
+                                                             Name is required (minimum 3 characters).
+                                                     </small>
+                                                  
+                                          </div>
+
+                     </div> 
+               
+               
+                     <div class="col-md-2">
+                                
+                                          <div class="form-group" > 
+                                                            <label>Star</label>     <select class="poojaname-control" formControlName="devotee_star" id="devotee_star">
+
+                                                             <option *ngFor="let star of stars" [value]="star">{{star}}</option>
+                                                             </select>                         
+                                            
+                                          </div>  
+                                  
+                                  
+                                  
+                     </div>
+              
+                                        <button type="button" (click)="addTodo($event)" >Add Todo </button>
+
+          </div>
+
+
+
+
+
+      </form>
+
+</div>
+
+<div>
+   <ul>
+      <li *ngFor="let todo of todos; let i=index">
+        <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
+        <span [ngClass]="{'checked': todo.completed}">{{ todo.name }} </span>
+         <span [ngClass]="{'checked': todo.completed}">{{ todo.star }} </span>
+        <span (click)="deleteTodo(i)" class="delete-icon">[X] </span>
+        </li>
+        </ul>
+  
+</div>  
+
+<div id="print-section">
+<h2>  Kshethra print test </h2>
+  
+  <div>
+   <ul>
+      <li *ngFor="let todo of todos; let i=index">
+        <input type="checkbox" class="checkbox" [(ngModel)]="todo.completed" />
+        <span [ngClass]="{'checked': todo.completed}">{{ todo.name }} </span>
+         <span [ngClass]="{'checked': todo.completed}">{{ todo.star }} </span>
+        <span (click)="deleteTodo(i)" class="delete-icon">[X] </span>
+        </li>
+        </ul>
+  
+</div> 
+  
+</div>
+
+<button (click)="print()">print</button>
+
+
+ 
+          
+    
+  
+
+ 
+    
+
+  
+
+
+
+
+
+    

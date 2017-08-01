@@ -1,0 +1,30 @@
+<h3> add New pdt </h3>
+<div>
+    <form [formGroup]="myForm" novalidate (ngSubmit)="submit_values()" #addproductForm="ngForm">
+  
+    <label for="pdtname">Product Name</label>
+    <input type="text"  name="pdtname"   formControlName="product_name"  placeholder="Product name..">
+    
+    <label for="code">Code</label>
+    <input type="text"  name="code"   formControlName="code"  placeholder="Code..">
+      
+     <label for="desec">Product Description</label>
+    <input type="text"  name="desec"   formControlName="desec"  placeholder="Description..">  
+      
+     <label for="price">Price</label>
+    <input type="number"  name="price"   formControlName="price"  placeholder="Price.."> 
+      
+      
+     <md-radio-group class="example-radio-group" formControlName="has_stock_radio">
+  <md-radio-button class="example-radio-button" *ngFor="let has_stock of has_stocks" [value]="has_stock">
+    {{has_stock}}
+  </md-radio-button>
+</md-radio-group>
+<div class="example-selected-value">Your stock is: {{has_stock_radio}}</div> 
+      
+    
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+ 
